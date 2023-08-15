@@ -7,4 +7,4 @@ const VoteModel = new mongoose.Schema({
   },
 });
 
-module.exports = mongoose.model("Email", VoteModel);
+module.exports = mongoose.model("Votes", VoteModel);
