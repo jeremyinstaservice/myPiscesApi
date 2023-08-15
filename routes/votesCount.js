@@ -16,10 +16,9 @@ router.get("/", async (req, res) => {
 });
 
 // UPDATE VOTE COUNT
-router.post("/voting", async (req, res) => {
+router.put("/voting", async (req, res) => {
   try {
     const newVotes = req.body.vote_count;
-    const newDate = new Date();
 
     const Votes = new VoteModel({
       voteCount: newVotes,
