@@ -15,13 +15,14 @@ dotenv.config();
 app.use(express.json());
 
 const allowedOrigins = app.use(
-  cors({
-    origin: [
-      "https://piscesconsultants.vercel.app",
-      // "http://localhost:3000",
-      "http://localhost:5173",
-    ],
-  })
+  cors()
+  //   {
+  //   origin: [
+  //     "https://piscesconsultants.vercel.app",
+  //     // "http://localhost:3000",
+  //     "http://localhost:5173",
+  //   ],
+  // }
 );
 
 mongoose.set("strictQuery", false);
