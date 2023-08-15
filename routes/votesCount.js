@@ -1,4 +1,5 @@
 const express = require("express");
+const { findOne } = require("../models/VoteModel");
 const router = express.Router();
 const VoteModel = require("../models/VoteModel");
 
@@ -20,12 +21,19 @@ router.post("/voting", async (req, res) => {
   try {
     const newVotes = req.body.vote_count;
 
-    const Votes = new VoteModel({
-      voteCount: newVotes,
-    });
+    const existingVote = await VoteModel.findOne();
 
-    const vote = await Votes.save();
-    const { voteCount } = vote._doc;
+    if (existingVote) {
+      existingVote.voteCount = newVotes;
+      await existingVote.save();
+    } else {
+      // Create a new vote count document
+      const Votes = new VoteModel({
+        voteCount: newVotes,
+      });
+      await Votes.save();
+    }
+
     res.status(200).json({ voteCount });
   } catch (error) {
     res.status(400).json({
