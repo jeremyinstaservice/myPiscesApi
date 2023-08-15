@@ -34,7 +34,7 @@ router.post("/voting", async (req, res) => {
       await Votes.save();
     }
 
-    res.status(200).json({ voteCount });
+    res.status(200).json({ voteCount: newVotes });
   } catch (error) {
     res.status(400).json({
       message: "Updating vote failed",
