@@ -6,6 +6,7 @@ const path = require("path");
 const PORT = process.env.PORT || 8080;
 const authRoute = require("./routes/auth");
 const emailRoute = require("./routes/emails");
+const voteCount = require("./routes/votesCount");
 
 const app = express();
 
@@ -16,7 +17,7 @@ app.use(express.json());
 const allowedOrigins = [
   "https://piscesconsultants.vercel.app",
   // "http://localhost:3000",
-  // "http://localhost:5173",
+  "http://localhost:5173",
 ];
 
 const corsOptions = {
@@ -40,6 +41,7 @@ mongoose.connect(process.env.MONGO_URL, {
 
 app.use("/api/auth", authRoute);
 app.use("/api/emails", emailRoute);
+app.use("/api/voteCount", voteCount);
 
 // Serve the index.html for all routes
 app.use(express.static(path.join(__dirname, "dist")));
