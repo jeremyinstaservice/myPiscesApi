@@ -1,10 +1,10 @@
 const mongoose = require("mongoose");
 
-const EmailModel = new mongoose.Schema({
-  email: {
+const VoteModel = new mongoose.Schema({
+  voteCount: {
     type: Number,
     required: true,
   },
 });
 
-module.exports = mongoose.model("Email", EmailModel);
+module.exports = mongoose.model("Email", VoteModel);

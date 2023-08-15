@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 const VoteModel = require("../models/VoteModel");
 
-// GET EMAIL
+// GET VOTE COUNT
 router.get("/", async (req, res) => {
   try {
     const voteCount = await VoteModel.find({});
@@ -14,5 +14,7 @@ router.get("/", async (req, res) => {
     });
   }
 });
+
+// UPDATE VOTE COUNT
 
 module.exports = router;
