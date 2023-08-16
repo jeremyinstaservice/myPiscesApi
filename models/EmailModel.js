@@ -16,15 +16,15 @@ const EmailModel = new mongoose.Schema(
     },
     continent: {
       type: String,
-      required: true,
+      required: false,
     },
     country: {
       type: String,
-      required: true,
+      required: false,
     },
     city: {
       type: String,
-      required: true,
+      required: false,
     },
     date: {
       type: Date,
