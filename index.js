@@ -17,8 +17,8 @@ app.use(express.json());
 app.use(
   cors({
     origin: [
-      "https://piscesconsultants.vercel.app",
       "https://piscesconsultant.vercel.app",
+      "https://piscesconsultants.vercel.app",
       "http://localhost:5173",
       // "https://anotherdomain.com",
     ],
