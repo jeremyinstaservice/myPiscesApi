@@ -18,7 +18,7 @@ app.use(
   cors({
     origin: [
       "https://piscesconsultants.vercel.app",
-      "https://piscesconsultant.vercel.app/vote",
+      "https://piscesconsultant.vercel.app",
       "http://localhost:5173",
       // "https://anotherdomain.com",
     ],
